@@ -16,10 +16,6 @@
 #include <cstring>
 #include <ctime>
 
-// test
-#include <jni.h>
-#include <string>
-
 #if defined(_MSC_VER)
 #pragma warning(disable: 4244 4267) // possible loss of data
 #endif
@@ -28,16 +24,9 @@
 // interface implementation
 //
 
-extern "C"
-JNIEXPORT jstring JNICALL
-Java_com_example_llamachat_LlamaBridge_getLlamaVersion(JNIEnv* env, jobject /* this */) {
-    std::string version = "LLaMA Chat v1.0";
-    return env->NewStringUTF(version.c_str());
-}
-
 struct llama_sampler_chain_params llama_sampler_chain_default_params() {
     struct llama_sampler_chain_params result = {
-        /*.no_perf                     =*/ true,
+            /*.no_perf                     =*/ true,
     };
 
     return result;
@@ -269,12 +258,12 @@ struct llama_model * llama_model_load_from_splits(
 //
 
 int32_t llama_chat_apply_template(
-                              const char * tmpl,
-         const struct llama_chat_message * chat,
-                                  size_t   n_msg,
-                                    bool   add_ass,
-                                    char * buf,
-                                 int32_t   length) {
+        const char * tmpl,
+        const struct llama_chat_message * chat,
+        size_t   n_msg,
+        bool   add_ass,
+        char * buf,
+        int32_t   length) {
     const std::string curr_tmpl(tmpl == nullptr ? "chatml" : tmpl);
 
     // format the chat to string

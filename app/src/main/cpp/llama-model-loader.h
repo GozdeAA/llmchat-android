@@ -6,7 +6,7 @@
 #include "llama-arch.h"
 #include "llama-mmap.h"
 
-#include "ggml/ggml-cpp.h"
+#include "ggml-cpp.h"
 
 #include <cstddef>
 #include <map>

@@ -1,6 +1,6 @@
 #include "llama-model-loader.h"
 
-#include "ggml/ggml.h"
+#include "ggml.h"
 
 #include <array>
 #include <cinttypes>

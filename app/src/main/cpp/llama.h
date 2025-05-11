@@ -1,13 +1,14 @@
 #ifndef LLAMA_H
 #define LLAMA_H
 
-#include <cstddef>
-#include <cstdint>
-#include <cstdio>
+#include "ggml.h"
+#include "ggml-cpu.h"
+#include "ggml-backend.h"
 
-#include "ggml/ggml.h"
-#include "ggml/ggml-cpu.h"
-#include "ggml/ggml-backend.h"
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdbool.h>
 
 #ifdef LLAMA_SHARED
 #    if defined(_WIN32) && !defined(__MINGW32__)

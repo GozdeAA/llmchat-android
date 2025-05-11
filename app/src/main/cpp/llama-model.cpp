@@ -7,7 +7,7 @@
 #include "llama-model-loader.h"
 #include "llama-kv-cache.h"
 
-#include "ggml/ggml-cpp.h"
+#include "ggml-cpp.h"
 
 #include <algorithm>
 #include <cassert>
